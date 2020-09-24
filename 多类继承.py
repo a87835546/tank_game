@@ -6,7 +6,7 @@ class A(object):
 class B(A):
     def __init__(self):
         print('enter B print')
-        super().__init__()
+        super(B, self).__init__()
         print('leave B print')
 
 class C(A):
@@ -14,13 +14,13 @@ class C(A):
         print('enter C print' + self.__class__.__name__)
 
         print('C父类的类名：' + C.__base__.__name__, '当前C类的类名：' + C.__name__, 'C子类的类名：' + self.__class__.__name__)
-        super().__init__()
+        super(C, self).__init__()
         print('leave C print' + self.__class__.__name__)
 
 class D(B, C):
     def __init__(self):
         print('enter D print')
-        super().__init__()
+        super(D, self).__init__()
         print('leave D print')
 
 d = D()
